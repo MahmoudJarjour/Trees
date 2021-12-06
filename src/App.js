@@ -1,23 +1,173 @@
-import logo from './logo.svg';
-import './App.css';
+import "./App.css";
+import MakeTree from "./Component/MakeTree";
+
+const data = [
+  {
+    name: "Root",
+    children: [
+      {
+        name: "Child 1",
+        children: [
+          {
+            name: "Grand Child",
+          },
+        ],
+      },
+      {
+        name: "Child 2",
+        children: [
+          {
+            name: "Grand Child",
+            children: [
+              {
+                name: "Great Grand Child 1",
+              },
+              {
+                name: "Grand Grand Child 2",
+              },
+            ],
+          },
+        ],
+      },
+      {
+        name: "Child 2",
+      },
+    ],
+  },
+  {
+    name: "Root",
+    children: [
+      {
+        name: "Child 1",
+        children: [
+          {
+            name: "Grand Child",
+          },
+        ],
+      },
+      {
+        name: "Child 2",
+        children: [
+          {
+            name: "Grand Child",
+            children: [
+              {
+                name: "Great Grand Child 1",
+              },
+              {
+                name: "Root",
+                children: [
+                  {
+                    name: "Child 1",
+                    children: [
+                      {
+                        name: "Grand Child",
+                      },
+                    ],
+                  },
+                  {
+                    name: "Child 2",
+                    children: [
+                      {
+                        name: "Grand Child",
+                        children: [
+                          {
+                            name: "Great Grand Child 1",
+                          },
+                          {
+                            name: "Root",
+                            children: [
+                              {
+                                name: "Child 1",
+                                children: [
+                                  {
+                                    name: "Grand Child",
+                                  },
+                                ],
+                              },
+                              {
+                                name: "Child 2",
+                                children: [
+                                  {
+                                    name: "Grand Child",
+                                    children: [
+                                      {
+                                        name: "Great Grand Child 1",
+                                      },
+                                      {
+                                        name: "Grand Grand Child 2",
+                                      },
+                                    ],
+                                  },
+                                ],
+                              },
+                              {
+                                name: "Child 2",
+                              },
+                            ],
+                          },
+                          {
+                            name: "Grand Grand Child 2",
+                          },
+                        ],
+                      },
+                    ],
+                  },
+                  {
+                    name: "Child 2",
+                  },
+                ],
+              },
+              {
+                name: "Grand Grand Child 2",
+              },
+            ],
+          },
+        ],
+      },
+      {
+        name: "Child 2",
+      },
+    ],
+  },
+  {
+    name: "Root",
+    children: [
+      {
+        name: "Child 1",
+        children: [
+          {
+            name: "Grand Child",
+          },
+        ],
+      },
+      {
+        name: "Child 2",
+        children: [
+          {
+            name: "Grand Child",
+            children: [
+              {
+                name: "Great Grand Child 1",
+              },
+              {
+                name: "Grand Grand Child 2",
+              },
+            ],
+          },
+        ],
+      },
+      {
+        name: "Child 2",
+      },
+    ],
+  },
+];
 
 function App() {
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <MakeTree title="mood" data={data} />
     </div>
   );
 }
