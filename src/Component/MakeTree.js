@@ -1,23 +1,16 @@
-import {
-  Card,
-  CardActionArea,
-  CardContent,
-  Grid,
-  Typography,
-} from "@mui/material";
+import { Card, CardContent, Grid, Typography } from "@mui/material";
 import React from "react";
 import { Tree, TreeNode } from "react-organizational-chart";
 
 export default function MakeTree(props) {
   return (
-    <Grid item xs={12} style={{ direction: "ltr" }}>
+    <Grid item xs={12}>
       <Tree
+        orien="Vertical"
         label={
           <Card variant="outlined">
             <CardContent>
-              <Typography variant="h5" sx={{ fontWeight: "600" }}>
-                {props.title}
-              </Typography>
+              <Typography variant="h6">{props.title}</Typography>
             </CardContent>
           </Card>
         }
@@ -26,20 +19,16 @@ export default function MakeTree(props) {
           <TreeNode
             label={
               <Card variant="none">
-                <CardActionArea>
-                  <CardContent>
-                    {item.children ? " " : item.name}
-                    {item.children?.length && (
-                      <TreeNode
-                        label={
-                          <Card variant="none">
-                            <MakeTree title={item.name} data={item.children} />
-                          </Card>
-                        }
-                      />
-                    )}
-                  </CardContent>
-                </CardActionArea>
+                {item.children ? " " : item.name}
+                {item.children?.length && (
+                  <TreeNode
+                    label={
+                      <Card variant="none">
+                        <MakeTree title={item.name} data={item.children} />
+                      </Card>
+                    }
+                  />
+                )}
               </Card>
             }
           />
